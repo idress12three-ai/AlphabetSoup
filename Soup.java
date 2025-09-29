@@ -44,7 +44,7 @@ public class Soup {
     //the letters
     public String companyCentered(){
         
-        return"";
+        return letters.substring(0,letters.length()/2)+company+letters.substring(letters.length()/2);;
     }
 
 
@@ -55,11 +55,12 @@ public class Soup {
 
     //should remove "num" letters from a random spot in the string letters. You may assume num never exceeds the length of the string.
     public void removeSome(int num){
-
+        int y = (int)(Math.random() * (letters.length() - num));
+        letters = letters.substring(0,y) + letters.substring(y+num);
     }
 
     //should remove the word "word" from the string letters. If the word is not found in letters then it does nothing.
     public void removeWord(String word){
-        
+        letters = letters.replaceFirst("word", "")     
     }
 }
